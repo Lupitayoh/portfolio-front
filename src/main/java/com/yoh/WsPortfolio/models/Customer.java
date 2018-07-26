@@ -1,7 +1,6 @@
 package com.yoh.WsPortfolio.models;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 /**@author Lupita Llama
@@ -20,9 +19,6 @@ public class Customer {
 
     @Column(name = "email")
     private String email;
-
-    @Column(name = "password")
-    private String password;
 
     @Column(name = "phone")
     private String phone;
@@ -61,14 +57,6 @@ public class Customer {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getPhone() {
@@ -119,13 +107,16 @@ public class Customer {
         this.is_activated = is_activated;
     }
 
+    public Customer(){
+
+    }
+
     @Override
     public String toString() {
         return "Customer{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
                 ", phone='" + phone + '\'' +
                 ", cellphone='" + cellphone + '\'' +
                 ", is_activated=" + is_activated +
