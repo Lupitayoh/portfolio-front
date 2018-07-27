@@ -17,6 +17,11 @@ public class CustomerServiceImpl implements CustomerService {
     @Autowired
     private CustomerRepository customerRepository;
 
+    /**@author Lupitayoh
+     * Return a Customer found by id
+     * @param id Long type,
+     * @return
+     */
     @Override
     public Customer getCustomer(Long id) {
         Optional<Customer> fooOptional = customerRepository.findById(id);

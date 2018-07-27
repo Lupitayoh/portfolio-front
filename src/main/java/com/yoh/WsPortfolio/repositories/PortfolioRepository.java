@@ -1,6 +1,6 @@
 package com.yoh.WsPortfolio.repositories;
 
-import com.yoh.WsPortfolio.models.Customer;
+import com.yoh.WsPortfolio.models.Portfolio;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -8,6 +8,5 @@ import org.springframework.stereotype.Repository;
  *
  */
 @Repository
-public interface CustomerRepository extends JpaRepository<Customer, Long> {
-
+public interface PortfolioRepository extends JpaRepository<Portfolio, Long> {
 }

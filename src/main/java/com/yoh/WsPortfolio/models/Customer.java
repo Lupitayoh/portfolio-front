@@ -3,7 +3,7 @@ package com.yoh.WsPortfolio.models;
 import javax.persistence.*;
 import java.util.Date;
 
-/**@author Lupita Llama
+/**@author Lupitayoh
  * Model customer, portafolio's owner
  */
 @Entity
@@ -34,6 +34,9 @@ public class Customer {
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date updated_at;
+
+    @OneToOne(mappedBy = "customer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Portfolio portfolio;
 
     public Long getId() {
         return id;
@@ -97,6 +100,14 @@ public class Customer {
 
     public void setUpdated_at(Date updated_at) {
         this.updated_at = updated_at;
+    }
+
+    public Portfolio getPortfolio() {
+        return portfolio;
+    }
+
+    public void setPortfolio(Portfolio portfolio) {
+        this.portfolio = portfolio;
     }
 
     public Customer(String name, String email, String phone, String cellphone, Boolean is_activated) {
